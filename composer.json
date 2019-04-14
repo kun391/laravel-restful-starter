@@ -1,9 +1,17 @@
 {
-    "name": "laravel/laravel",
+    "name": "kun391/larest-starter-kit",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": ["framework", "laravel", "restful", "api"],
     "license": "MIT",
     "type": "project",
+    "authors": [
+        {
+            "name": "Kun",
+            "email": "nguyentruongthanh.dn@gmail.com",
+            "homepage": "https://github.com/kun391",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "^7.1.3",
         "doctrine/dbal": "^2.7",

@@ -7,20 +7,18 @@ use Illuminate\Support\Facades\Storage;
 
 /**
  * Class UserTransformer.
- *
- * @package namespace App\Transformers;
  */
 class UserTransformer extends BaseTransformer
 {
     /**
-     * List of resources possible to include
+     * List of resources possible to include.
      *
      * @var array
      */
     protected $availableIncludes = ['image'];
 
     /**
-     * List of resources possible to include
+     * List of resources possible to include.
      *
      * @var array
      */
@@ -34,16 +32,16 @@ class UserTransformer extends BaseTransformer
     public function customAttributes($model): array
     {
         return [
-            'roles' => $model->getRoles(),
-            'avatar' => $model->image ? Storage::url('thumbnails/' . $model->image->filename) : null,
+            'roles'  => $model->getRoles(),
+            'avatar' => $model->image ? Storage::url('thumbnails/'.$model->image->filename) : null,
             'tokens' => $model->tokens,
         ];
     }
 
     /**
-     * Include owners
+     * Include owners.
      *
-     * @param  Illuminate\Database\Eloquent\Model $salon
+     * @param Illuminate\Database\Eloquent\Model $salon
      */
     public function includeImage(User $user)
     {
@@ -53,6 +51,6 @@ class UserTransformer extends BaseTransformer
             return;
         }
 
-        return $this->item($image, new ImageTransformer, 'Image');
+        return $this->item($image, new ImageTransformer(), 'Image');
     }
 }

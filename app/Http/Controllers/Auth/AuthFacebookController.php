@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
-use Socialite;
-use App\Models\Social;
-use App\Models\DeviceToken;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AuthFacebookRequest;
+use App\Models\DeviceToken;
+use App\Models\Social;
+use App\User;
+use Socialite;
 
 class AuthFacebookController extends Controller
 {
@@ -23,7 +23,7 @@ class AuthFacebookController extends Controller
 
         $social = Social::firstOrNew([
             'social_name' => $provider,
-            'social_id' => $profile->id,
+            'social_id'   => $profile->id,
         ]);
 
         if ($social->user_id) {
@@ -31,10 +31,10 @@ class AuthFacebookController extends Controller
         } else {
             $user = User::where(['email' => $profile->email])->first();
             if (!$user) {
-                $user = new User;
+                $user = new User();
                 $user->name = $profile->name;
                 $user->email = $profile->email;
-                $user->password = bcrypt($profile->id . time());
+                $user->password = bcrypt($profile->id.time());
                 $user->save();
             }
             $social->user_id = $user->id;

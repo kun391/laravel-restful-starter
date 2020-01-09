@@ -1,15 +1,14 @@
 <?php
 /**
- * Global helpers file with misc functions
- *
+ * Global helpers file with misc functions.
  */
-
 if (!function_exists('throwError')) {
     function throwError($message, $code)
     {
         if (!is_array($message)) {
             $message = [$message];
         }
+
         throw new \Illuminate\Http\Exceptions\HttpResponseException(new \Illuminate\Http\JsonResponse($message, $code));
     }
 }
@@ -31,12 +30,11 @@ if (!function_exists('formatToken')) {
     {
         return [
             'access_token' => $token,
-            'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60,
+            'token_type'   => 'bearer',
+            'expires_in'   => auth()->factory()->getTTL() * 60,
         ];
     }
 }
-
 
 if (!function_exists('currentUser')) {
     function currentUser()

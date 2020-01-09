@@ -3,18 +3,17 @@
 namespace App\Traits;
 
 use Exception;
-use Illuminate\Http\Exception\HttpResponseException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 trait ExceptionRenderTrait
 {
-
     /**
      * Render an exception into an HTTP response.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception  $e
+     * @param \Illuminate\Http\Request $request
+     * @param \Exception               $e
+     *
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $e)
@@ -22,8 +21,8 @@ trait ExceptionRenderTrait
         $data = [
             'status' => $e instanceof HttpException ? $e->getStatusCode() : 500,
             'errors' => [[
-                'title' => 'Internal Server Error',
-                'detail' => $e->getMessage() ?: ('An exception of ' . get_class_name($e)),
+                'title'  => 'Internal Server Error',
+                'detail' => $e->getMessage() ?: ('An exception of '.get_class_name($e)),
             ]],
         ];
 
@@ -31,7 +30,7 @@ trait ExceptionRenderTrait
             $data = array_merge($data, [
                 'status' => 403,
                 'errors' => [[
-                    'title' => 'Permission denied.',
+                    'title'  => 'Permission denied.',
                     'detail' => $e->getMessage(),
                 ]],
             ]);
@@ -41,7 +40,7 @@ trait ExceptionRenderTrait
             $data = array_merge($data, [
                 'status' => 401,
                 'errors' => [[
-                    'title' => 'Authenticate Error',
+                    'title'  => 'Authenticate Error',
                     'detail' => $e->getMessage() ?: 'Unauthenticated',
                 ]],
             ]);
@@ -51,7 +50,7 @@ trait ExceptionRenderTrait
             $data = array_merge($data, [
                 'status' => 401,
                 'errors' => [[
-                    'title' => 'Authenticate Error',
+                    'title'  => 'Authenticate Error',
                     'detail' => $e->getMessage() ?: 'Unauthenticated',
                 ]],
             ]);
@@ -61,7 +60,7 @@ trait ExceptionRenderTrait
             $data = array_merge($data, [
                 'status' => 404,
                 'errors' => [[
-                    'title' => 'Not Found Error',
+                    'title'  => 'Not Found Error',
                     'detail' => 'Not Found Model',
                 ]],
             ]);
@@ -71,8 +70,8 @@ trait ExceptionRenderTrait
             $data = array_merge($data, [
                 'status' => $e->getStatusCode(),
                 'errors' => [[
-                    'title' => 'Not Found Error',
-                    'detail' => $e->getMessage() ?: ('An exception of ' . get_class_name($e)),
+                    'title'  => 'Not Found Error',
+                    'detail' => $e->getMessage() ?: ('An exception of '.get_class_name($e)),
                 ]],
             ]);
         }
@@ -80,19 +79,19 @@ trait ExceptionRenderTrait
         if ($e instanceof \Illuminate\Validation\ValidationException) {
             $data = array_merge($data, [
                 'status' => $e->status,
-                'title' => 'Validation Error',
+                'title'  => 'Validation Error',
             ]);
             $errorResponses = function ($errors) use ($data) {
                 foreach ($errors as $key => $error) {
                     if (!is_array($error)) {
                         $errorResponses[] = [
-                            'title' => 'Bad Request',
+                            'title'  => 'Bad Request',
                             'detail' => $error,
                         ];
                     } else {
                         foreach ($error as $detail) {
                             $errorResponses[] = [
-                                'title' => $data['title'],
+                                'title'  => $data['title'],
                                 'detail' => $detail,
                                 'source' => [
                                     'pointer' => $key,

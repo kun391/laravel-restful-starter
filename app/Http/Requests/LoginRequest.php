@@ -22,7 +22,7 @@ class LoginRequest extends BaseRequest
     public function rules()
     {
         return [
-            'email' => 'required|string|email',
+            'email'    => 'required|string|email',
             'password' => 'required|string',
             'platform' => 'required|string|in:web_admin,app_owner,web_user',
         ];

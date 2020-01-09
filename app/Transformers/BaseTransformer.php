@@ -3,15 +3,12 @@
 namespace App\Transformers;
 
 /**
- * Include League\Fractal\ParamBag
+ * Include League\Fractal\ParamBag.
  */
-use League\Fractal\ParamBag;
 use League\Fractal\TransformerAbstract;
 
 /**
  * Class BaseTransformer.
- *
- * @package namespace App\Transformers;
  */
 class BaseTransformer extends TransformerAbstract
 {
@@ -33,7 +30,7 @@ class BaseTransformer extends TransformerAbstract
         $fillableValues = array_only($model->toArray(), array_diff($model->getFillable(), $hiddens));
 
         return array_merge($fillableValues, $this->customAttributes($model), [
-            'id' => (int) $model->id,
+            'id'         => (int) $model->id,
             'created_at' => $model->created_at ? $model->created_at->toIso8601String() : null,
             'updated_at' => $model->updated_at ? $model->updated_at->toIso8601String() : null,
             'deleted_at' => $model->deleted_at ? $model->deleted_at->toIso8601String() : null,

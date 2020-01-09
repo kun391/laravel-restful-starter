@@ -16,8 +16,8 @@ class UsersTableSeeder extends Seeder
         $user = \App\User::firstOrCreate(
             ['email' => 'admin@example.com'],
             [
-                'name' => 'Super Admin',
-                'password' => bcrypt('123123'),
+                'name'           => 'Super Admin',
+                'password'       => bcrypt('123123'),
                 'remember_token' => str_random(60),
             ]
         );
@@ -27,7 +27,7 @@ class UsersTableSeeder extends Seeder
             ['name' => Role::SUPER_ADMIN],
             [
                 'display_name' => 'Administrator',
-                'description' => 'User is allowed to manage all system.',
+                'description'  => 'User is allowed to manage all system.',
             ]
         );
 

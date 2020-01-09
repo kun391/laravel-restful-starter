@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Hash;
-use App\User;
-use App\Http\Requests\UserCreateRequest;
-use App\Http\Requests\UserUpdateRequest;
 use App\Http\Requests\ChangePasswordRequest;
-use App\Repositories\Contracts\UserRepository;
+use App\Http\Requests\UserCreateRequest;
 use App\Http\Requests\UserRegisterRequest;
+use App\Http\Requests\UserUpdateRequest;
+use App\Repositories\Contracts\UserRepository;
+use App\User;
+use Hash;
 
 /**
  * Class UsersController.
- *
- * @package namespace App\Http\Controllers;
  */
 class UsersController extends Controller
 {
@@ -66,7 +64,7 @@ class UsersController extends Controller
     }
 
     /**
-     * Funtion change pass of the user
+     * Funtion change pass of the user.
      */
     public function changePass(ChangePasswordRequest $request)
     {
@@ -79,8 +77,8 @@ class UsersController extends Controller
             return response()->json(null, 204);
         } else {
             $data = [
-                "message" => "The given data was invalid.",
-                'errors' => [
+                'message' => 'The given data was invalid.',
+                'errors'  => [
                     [
                         'detail' => 'The current password not match',
                     ],
@@ -94,7 +92,7 @@ class UsersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  UserCreateRequest $request
+     * @param UserCreateRequest $request
      *
      * @return \Illuminate\Http\Response
      */
@@ -108,7 +106,7 @@ class UsersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int $id
+     * @param int $id
      *
      * @return \Illuminate\Http\Response
      */
@@ -122,8 +120,8 @@ class UsersController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  UserUpdateRequest $request
-     * @param  string $id
+     * @param UserUpdateRequest $request
+     * @param string            $id
      *
      * @return Response
      */
@@ -137,7 +135,7 @@ class UsersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param int $id
      *
      * @return \Illuminate\Http\Response
      */
@@ -151,7 +149,7 @@ class UsersController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  UserRegisterRequest $request
+     * @param UserRegisterRequest $request
      *
      * @return \Illuminate\Http\Response
      */

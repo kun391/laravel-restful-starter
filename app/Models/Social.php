@@ -4,8 +4,6 @@ namespace App\Models;
 
 /**
  * Class Social.
- *
- * @package namespace App\Models;
  */
 class Social extends BaseModel
 {

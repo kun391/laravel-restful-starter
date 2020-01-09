@@ -12,10 +12,10 @@
  */
 
 /**
- * Authorized resources
+ * Authorized resources.
  */
 Route::group(['prefix' => 'v1'], function () {
-    Route::get('/', function() {
+    Route::get('/', function () {
         return response()->json(['message' => 'Welcome']);
     });
     Route::post('auth/login', 'Auth\AuthController@login');

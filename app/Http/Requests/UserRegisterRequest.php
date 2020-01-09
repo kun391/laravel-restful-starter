@@ -2,8 +2,6 @@
 
 namespace App\Http\Requests;
 
-use App\Models\Trust\Role;
-
 class UserRegisterRequest extends BaseRequest
 {
     /**
@@ -24,11 +22,11 @@ class UserRegisterRequest extends BaseRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:191',
-            'email' => 'required|string|unique:users,email',
+            'name'     => 'required|string|max:191',
+            'email'    => 'required|string|unique:users,email',
             'password' => 'required|string',
-            'phone' => 'sometimes|nullable|numeric|unique:users,phone',
-            'address' => 'sometimes|nullable|string|max:191',
+            'phone'    => 'sometimes|nullable|numeric|unique:users,phone',
+            'address'  => 'sometimes|nullable|string|max:191',
         ];
     }
 }

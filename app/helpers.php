@@ -44,7 +44,7 @@ if (!function_exists('currentUser')) {
             try {
                 $user = \JWTAuth::authenticate($token);
             } catch (\JWTException $e) {
-                return null;
+                return;
             }
         }
 

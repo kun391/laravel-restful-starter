@@ -2,7 +2,7 @@
 
 namespace App\Transformers;
 
-/**
+/*
  * Include League\Fractal\ParamBag.
  */
 use League\Fractal\TransformerAbstract;

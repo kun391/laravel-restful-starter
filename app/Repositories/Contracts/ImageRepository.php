@@ -6,8 +6,6 @@ use Prettus\Repository\Contracts\RepositoryInterface;
 
 /**
  * Interface ImageRepository.
- *
- * @package namespace App\Repositories\Contracts;
  */
 interface ImageRepository extends RepositoryInterface
 {

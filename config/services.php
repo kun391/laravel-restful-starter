@@ -20,7 +20,7 @@ return [
     ],
 
     'ses' => [
-        'key' => env('SES_KEY'),
+        'key'    => env('SES_KEY'),
         'secret' => env('SES_SECRET'),
         'region' => env('SES_REGION', 'us-east-1'),
     ],
@@ -30,13 +30,13 @@ return [
     ],
 
     'stripe' => [
-        'model' => App\User::class,
-        'key' => env('STRIPE_KEY'),
+        'model'  => App\User::class,
+        'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
     'facebook' => [
-        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_id'     => env('FACEBOOK_CLIENT_ID'),
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
-        'redirect' => env('FACEBOOK_CALLBACK_URL'),
+        'redirect'      => env('FACEBOOK_CALLBACK_URL'),
     ],
 ];

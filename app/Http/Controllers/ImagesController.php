@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\ImageCreateRequest;
 use App\Repositories\Contracts\ImageRepository;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * Class ImagesController.
- *
- * @package namespace App\Http\Controllers;
  */
 class ImagesController extends Controller
 {
@@ -17,6 +15,7 @@ class ImagesController extends Controller
      * @var ImageRepository
      */
     protected $repository;
+
     /**
      * ImagesController constructor.
      *
@@ -30,7 +29,7 @@ class ImagesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  ImageCreateRequest $request
+     * @param ImageCreateRequest $request
      *
      * @return \Illuminate\Http\Response
      */
@@ -44,7 +43,7 @@ class ImagesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $id
+     * @param int $id
      *
      * @return \Illuminate\Http\Response
      */
@@ -54,9 +53,8 @@ class ImagesController extends Controller
         $item->delete();
 
         Storage::delete($item->pathname);
-        Storage::delete('thumbnails/' . $item->filename);
+        Storage::delete('thumbnails/'.$item->filename);
 
         return response()->json(null, 204);
-
     }
 }

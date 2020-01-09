@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers\Auth;
 
-use JWTAuth;
-use App\User;
-use App\Http\Controllers;
-use App\Models\Trust\Role;
-use App\Models\DeviceToken;
-use Illuminate\Http\Request;
-use App\Http\Requests\LoginRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
+use App\Models\DeviceToken;
+use App\Models\Trust\Role;
+use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use JWTAuth;
 
 class AuthController extends Controller
 {
@@ -25,7 +24,7 @@ class AuthController extends Controller
                         'version' => '1.0',
                     ],
                     'errors' => [
-                        'title' => 'AuthenticateError',
+                        'title'  => 'AuthenticateError',
                         'detail' => 'Invalid_email_or_password',
                     ],
                 ];
@@ -71,7 +70,7 @@ class AuthController extends Controller
                         'version' => '1.0',
                     ],
                     'errors' => [
-                        'title' => 'AuthenticateError',
+                        'title'  => 'AuthenticateError',
                         'detail' => 'Invalid_email_or_password',
                     ],
                 ];
@@ -86,7 +85,7 @@ class AuthController extends Controller
                     'version' => '1.0',
                 ],
                 'errors' => [
-                    'title' => 'AuthenticateError',
+                    'title'  => 'AuthenticateError',
                     'detail' => 'Failed_to_create_token',
                 ],
             ];

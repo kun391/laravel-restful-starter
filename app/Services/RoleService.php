@@ -1,8 +1,9 @@
 <?php
+
 namespace App\Services;
 
-use App\User;
 use App\Models\Trust\Role;
+use App\User;
 
 class RoleService
 {

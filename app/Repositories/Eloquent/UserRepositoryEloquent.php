@@ -2,23 +2,21 @@
 
 namespace App\Repositories\Eloquent;
 
-use App\User;
 use App\Models\Image;
-use App\Services\RoleService;
 use App\Repositories\Contracts\UserRepository;
-use Prettus\Repository\Eloquent\BaseRepository;
-use Prettus\Repository\Criteria\RequestCriteria;
+use App\Services\RoleService;
+use App\User;
 use Illuminate\Support\Facades\Storage;
+use Prettus\Repository\Criteria\RequestCriteria;
+use Prettus\Repository\Eloquent\BaseRepository;
 
 /**
  * Class UserRepositoryEloquent.
- *
- * @package namespace App\Repositories\Eloquent;
  */
 class UserRepositoryEloquent extends BaseRepository implements UserRepository
 {
     /**
-     * Specify Model class name
+     * Specify Model class name.
      *
      * @return string
      */
@@ -33,7 +31,7 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
     }
 
     /**
-     * Boot up the repository, pushing criteria
+     * Boot up the repository, pushing criteria.
      */
     public function boot()
     {
@@ -41,8 +39,10 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
     }
 
     /**
-     * Override method create to add owners
-     * @param  array  $attributes attributes from request
+     * Override method create to add owners.
+     *
+     * @param array $attributes attributes from request
+     *
      * @return object
      */
     public function create(array $attributes)
@@ -59,8 +59,10 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
     }
 
     /**
-     * Override method create to add owners
-     * @param  array  $attributes attributes from request
+     * Override method create to add owners.
+     *
+     * @param array $attributes attributes from request
+     *
      * @return object
      */
     public function update(array $attributes, $id)
@@ -77,11 +79,11 @@ class UserRepositoryEloquent extends BaseRepository implements UserRepository
         if (!empty($attributes['photo'])) {
             if ($user->image) {
                 Storage::delete($user->image->pathname);
-                Storage::delete('thumbnails/' . $user->image->filename);
+                Storage::delete('thumbnails/'.$user->image->filename);
                 $user->image->delete();
             }
             Image::where('id', $attributes['photo'])->update([
-                'object_id' => $user->id,
+                'object_id'   => $user->id,
                 'object_type' => User::IMAGE_TYPE,
             ]);
         }

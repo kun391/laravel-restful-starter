@@ -4,8 +4,6 @@ namespace App\Models;
 
 /**
  * Class Image.
- *
- * @package namespace App\Models;
  */
 class Image extends BaseModel
 {
@@ -15,5 +13,4 @@ class Image extends BaseModel
      * @var array
      */
     protected $fillable = ['filename', 'object_id', 'object_type', 'name', 'pathname'];
-
 }

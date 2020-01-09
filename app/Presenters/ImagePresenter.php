@@ -7,15 +7,14 @@ use Prettus\Repository\Presenter\FractalPresenter;
 
 /**
  * Class ImagePresenter.
- *
- * @package namespace App\Presenters;
  */
 class ImagePresenter extends FractalPresenter
 {
     protected $resourceKeyItem = 'Image';
     protected $resourceKeyCollection = 'Image';
+
     /**
-     * Transformer
+     * Transformer.
      *
      * @return \League\Fractal\TransformerAbstract
      */

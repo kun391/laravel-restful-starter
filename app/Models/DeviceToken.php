@@ -8,8 +8,6 @@ use Prettus\Repository\Traits\TransformableTrait;
 
 /**
  * Class DeviceToken.
- *
- * @package namespace App\Models;
  */
 class DeviceToken extends Model implements Transformable
 {
@@ -21,5 +19,4 @@ class DeviceToken extends Model implements Transformable
      * @var array
      */
     protected $fillable = [];
-
 }

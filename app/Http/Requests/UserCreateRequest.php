@@ -24,12 +24,12 @@ class UserCreateRequest extends BaseRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:191',
-            'email' => 'required|string|unique:users,email',
+            'name'     => 'required|string|max:191',
+            'email'    => 'required|string|unique:users,email',
             'password' => 'required|string',
-            'phone' => 'sometimes|nullable|numeric|unique:users,phone',
-            'address' => 'sometimes|nullable|string|max:191',
-            'role' => 'required|string|in:' . implode(',', Role::roles()),
+            'phone'    => 'sometimes|nullable|numeric|unique:users,phone',
+            'address'  => 'sometimes|nullable|string|max:191',
+            'role'     => 'required|string|in:'.implode(',', Role::roles()),
         ];
     }
 
@@ -39,7 +39,7 @@ class UserCreateRequest extends BaseRequest
     public function messages()
     {
         return [
-            'role.in' => 'The selected role is invalid. Must be in ' . implode(', ', Role::roles()),
+            'role.in' => 'The selected role is invalid. Must be in '.implode(', ', Role::roles()),
         ];
     }
 }

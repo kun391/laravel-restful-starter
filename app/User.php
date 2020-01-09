@@ -4,13 +4,13 @@ namespace App;
 
 use App\Models\BaseModel;
 use Illuminate\Auth\Authenticatable;
-use Tymon\JWTAuth\Contracts\JWTSubject;
-use Illuminate\Notifications\Notifiable;
-use Zizaco\Entrust\Traits\EntrustUserTrait;
 use Illuminate\Auth\Passwords\CanResetPassword;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use Illuminate\Notifications\Notifiable;
+use Tymon\JWTAuth\Contracts\JWTSubject;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
 
 class User extends BaseModel implements JWTSubject, AuthenticatableContract, AuthorizableContract, CanResetPasswordContract
 {
@@ -42,8 +42,10 @@ class User extends BaseModel implements JWTSubject, AuthenticatableContract, Aut
     ];
 
     /**
-     * Update created_at
+     * Update created_at.
+     *
      * @param array attributes
+     *
      * @return string
      */
     public function getCreatedAttribute()
@@ -52,8 +54,10 @@ class User extends BaseModel implements JWTSubject, AuthenticatableContract, Aut
     }
 
     /**
-     * Update update_at
+     * Update update_at.
+     *
      * @param array attributes
+     *
      * @return string
      */
     public function getUpdatedAttribute()
@@ -62,8 +66,10 @@ class User extends BaseModel implements JWTSubject, AuthenticatableContract, Aut
     }
 
     /**
-     * Update update_at
+     * Update update_at.
+     *
      * @param array attributes
+     *
      * @return string
      */
     public function getDeletedAttribute()
@@ -92,7 +98,8 @@ class User extends BaseModel implements JWTSubject, AuthenticatableContract, Aut
     }
 
     /**
-     * get roles user
+     * get roles user.
+     *
      * @return array roles
      */
     public function getRoles()
@@ -101,7 +108,7 @@ class User extends BaseModel implements JWTSubject, AuthenticatableContract, Aut
     }
 
     /**
-     * Define relations images
+     * Define relations images.
      */
     public function image()
     {
@@ -109,7 +116,7 @@ class User extends BaseModel implements JWTSubject, AuthenticatableContract, Aut
     }
 
     /**
-     * Define relations images
+     * Define relations images.
      */
     public function tokens()
     {

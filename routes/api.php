@@ -15,6 +15,9 @@
  * Authorized resources
  */
 Route::group(['prefix' => 'v1'], function () {
+    Route::get('/', function() {
+        return response()->json(['message' => 'Welcome']);
+    });
     Route::post('auth/login', 'Auth\AuthController@login');
     Route::post('auth/facebook', 'Auth\AuthFacebookController@login');
     Route::post('password/forgot/request', 'Auth\ForgotPasswordController@getResetToken');

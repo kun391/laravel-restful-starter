@@ -3,8 +3,8 @@
 namespace App\Exceptions;
 
 use Exception;
-use SMartins\Exceptions\JsonHandler;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use SMartins\Exceptions\JsonHandler;
 
 class Handler extends ExceptionHandler
 {

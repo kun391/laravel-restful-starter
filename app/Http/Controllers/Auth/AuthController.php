@@ -36,9 +36,6 @@ class AuthController extends Controller
                 case User::PF_ADMIN:
                     $trust = auth()->user()->hasRole(Role::SUPER_ADMIN);
                     break;
-                case User::PF_OWNER:
-                    $trust = auth()->user()->hasRole(Role::SALON_OWNER);
-                    break;
                 case User::PF_USER:
                 default:
                     $trust = true;

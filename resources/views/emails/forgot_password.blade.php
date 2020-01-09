@@ -3,7 +3,7 @@
   <head>
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>M2B - Forgot password</title>
+    <title>Forgot password</title>
     <style>
       /* -------------------------------------
           GLOBAL RESETS

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "004932d88ecd5fe3d3c76beb22838839",
+    "content-hash": "a31175ddb41ff803784c39d6827044c0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2525,6 +2525,61 @@
                 "uuid"
             ],
             "time": "2018-07-19T23:38:55+00:00"
+        },
+        {
+            "name": "sfelix-martins/json-exception-handler",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sfelix-martins/json-exception-handler.git",
+                "reference": "7b1c5a123c561339183170ed0429b8a769b72157"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sfelix-martins/json-exception-handler/zipball/7b1c5a123c561339183170ed0429b8a769b72157",
+                "reference": "7b1c5a123c561339183170ed0429b8a769b72157",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.0",
+                "phpunit/phpunit": "^7.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "SMartins\\Exceptions\\JsonHandlerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SMartins\\Exceptions\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Samuel Martins",
+                    "email": "sfelix_martins@hotmail.com"
+                }
+            ],
+            "description": "Adds more power to Laravel Exceptions Handler to treat json responses",
+            "keywords": [
+                "api",
+                "exceptions",
+                "handler",
+                "json",
+                "jsonapi",
+                "laravel"
+            ],
+            "time": "2019-09-19T16:24:55+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

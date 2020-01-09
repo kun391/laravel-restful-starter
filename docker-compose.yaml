@@ -2,15 +2,17 @@ version: '2'
 services:
   # container for API
   api:
-    image: toancong/phpup:2
+    image: kun391/phpup:1.0
     ports:
       - 9000:80
     depends_on:
       - db
     volumes:
       - .:/var/www/app
+      - ./conf/queue.conf:/etc/supervisor/conf.d/queue.conf
     environment:
       - PHP_MEM_LIMIT=1024M
+    restart: on-failure
   db:
     image: mysql:5.7
     ports:

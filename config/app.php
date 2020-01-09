@@ -78,7 +78,7 @@ return [
     |
      */
 
-    'locale' => 'vi',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -158,6 +158,8 @@ return [
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
         Zizaco\Entrust\EntrustServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        SMartins\Exceptions\JsonHandlerServiceProvider::class,
+
         /*
          * Application Service Providers...
          */

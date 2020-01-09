@@ -2,6 +2,7 @@
 # The boilerplate RESTful application build on Laravel & Jsonapi Specification 1.0
 
 [![Build Status](https://travis-ci.com/kun391/laravel-restful-starter.svg?branch=master)](https://travis-ci.org/kun391/laravel-restful-starter)
+[![StyleCI](https://github.styleci.io/repos/181275625/shield?branch=master)](https://github.styleci.io/repos/181275625)
 
 ## Requirement
 

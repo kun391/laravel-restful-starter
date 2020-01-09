@@ -3,11 +3,13 @@
 namespace App\Exceptions;
 
 use Exception;
+use SMartins\Exceptions\JsonHandler;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
 class Handler extends ExceptionHandler
 {
-    use \App\Traits\ExceptionRenderTrait;
+    // use \App\Traits\ExceptionRenderTrait;
+    use JsonHandler;
     /**
      * A list of the exception types that are not reported.
      *
@@ -26,6 +28,15 @@ class Handler extends ExceptionHandler
         'password',
         'password_confirmation',
     ];
+
+    public function render($request, Exception $exception)
+    {   
+        if ($request->expectsJson()) {
+            return $this->jsonResponse($exception);
+        }
+
+        return parent::render($request, $exception);
+    }
 
     /**
      * Report or log an exception.

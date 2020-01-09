@@ -1,6 +1,6 @@
 php:
   preset: recommended
-  risky: true
+  risky: false
   finder:
     exclude:
       - modules
@@ -8,4 +8,7 @@ php:
       - storage
       - vendor
     name: "*.php"
-    not-name: "*.blade.php"
+    not-name: 
+      - "*.blade.php"
+      - ".php_cs"
+      - ".php_cs.cache"

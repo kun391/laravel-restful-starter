@@ -1,14 +1,13 @@
-php:
-  preset: recommended
-  risky: false
-  finder:
-    exclude:
-      - modules
-      - node_modules
-      - storage
-      - vendor
-    name: "*.php"
-    not-name: 
-      - "*.blade.php"
-      - ".php_cs"
-      - ".php_cs.cache"
+preset: recommended
+risky: false
+finder:
+  exclude:
+    - modules
+    - node_modules
+    - storage
+    - vendor
+  name: "*.php"
+  not-name: 
+    - "*.blade.php"
+    - ".php_cs"
+    - ".php_cs.cache"

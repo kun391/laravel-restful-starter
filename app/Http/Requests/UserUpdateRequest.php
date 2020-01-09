@@ -42,7 +42,7 @@ class UserUpdateRequest extends BaseRequest
     public function messages()
     {
         return [
-            'role.in' => 'The selected role is invalid. Must be in '. implode(', ', Role::roles()),
+            'role.in' => 'The selected role is invalid. Must be in '.implode(', ', Role::roles()),
         ];
     }
 }

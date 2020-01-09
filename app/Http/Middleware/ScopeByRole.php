@@ -4,7 +4,6 @@ namespace App\Http\Middleware;
 
 use App\Models\Trust\Role;
 use Closure;
-use Illuminate\Database\Eloquent\Builder;
 
 class ScopeByRole
 {
